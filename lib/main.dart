@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:nano_health_suite/view/components/app_nested_navigation.dart';
+import 'package:nano_health_suite/view/nested/app_nested_navigation.dart';
 
 void main() {
 

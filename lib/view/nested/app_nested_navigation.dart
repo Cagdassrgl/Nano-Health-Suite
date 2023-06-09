@@ -24,7 +24,7 @@ class AppNestedNavigation extends StatelessWidget {
             AppNavigation.LOGIN: GetPageRoute(
               settings: settings,
               routeName: AppNavigation.LOGIN,
-              page: () => const LoginPage(),
+              page: () => LoginPage(),
               binding: LoginBinding(),
             ),
             AppNavigation.HOME: GetPageRoute(
@@ -44,7 +44,7 @@ class AppNestedNavigation extends StatelessWidget {
               GetPageRoute(
                 settings: settings,
                 routeName: AppNavigation.LOGIN,
-                page: () => const LoginPage(),
+                page: () => LoginPage(),
                 binding: LoginBinding(),
               );
         },
