@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:nano_health_suite/core/constants/colors/app_colors..dart';
 
 class LoginButton extends StatelessWidget {

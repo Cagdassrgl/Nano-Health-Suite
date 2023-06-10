@@ -36,7 +36,7 @@ class AppNestedNavigation extends StatelessWidget {
             AppNavigation.DETAIL: GetPageRoute(
               settings: settings,
               routeName: AppNavigation.DETAIL,
-              page: () => const DetailPage(),
+              page: () => DetailPage(),
               binding: DetailBinding(),
             ),
           };
