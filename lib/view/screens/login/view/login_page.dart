@@ -43,9 +43,9 @@ class LoginPage extends StatelessWidget {
                 LoginTextFormField(
                   iconData: Icons.remove_red_eye_outlined,
                   controller: controller.passwordController,
-                  color: !controller.isObscure ? AppColors.iconCheckColor : AppColors.black.withOpacity(.15),
+                  color: controller.isObscure ? AppColors.iconCheckColor : AppColors.black.withOpacity(.15),
                   labelText: 'Password',
-                  obscureText: controller.isObscure,
+                  obscureText: !controller.isObscure,
                   onTap: () {
                       controller.onTapPasswordIcon();
                   },
