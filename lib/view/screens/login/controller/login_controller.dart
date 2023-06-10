@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,6 +18,8 @@ class LoginController extends GetxController {
   Logger logger = Logger();
 
   LoginModel? loginModel;
+
+  bool isObscure = false;
 
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -51,4 +55,11 @@ class LoginController extends GetxController {
       Get.back();
     }
   }
+
+  void onTapPasswordIcon() {
+   isObscure = isObscure ? false : true;
+   update([PAGE_OBSERVE_ID]);
+  }
+
+  static const PAGE_OBSERVE_ID = "observe_id";
 }

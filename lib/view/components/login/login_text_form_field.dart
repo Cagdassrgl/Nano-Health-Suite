@@ -9,6 +9,8 @@ class LoginTextFormField extends StatelessWidget {
   String? labelText;
   IconData? iconData;
   Color? color;
+  bool obscureText;
+  final Function()? onTap;
 
   LoginTextFormField({
     Key? key,
@@ -16,12 +18,15 @@ class LoginTextFormField extends StatelessWidget {
     required this.controller,
     required this.color,
     required this.labelText,
+    this.onTap,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      obscureText: obscureText,
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: TextStyle(
@@ -29,9 +34,12 @@ class LoginTextFormField extends StatelessWidget {
             fontWeight: FontWeight.w400,
             color: AppColors.black.withOpacity(0.85),
             fontFamily: "SFProDisplay"),
-        suffixIcon: Icon(
-          iconData,
-          color: color,
+        suffixIcon: InkWell(
+          onTap: onTap,
+          child: Icon(
+            iconData,
+            color: color,
+          ),
         ),
       ),
     );

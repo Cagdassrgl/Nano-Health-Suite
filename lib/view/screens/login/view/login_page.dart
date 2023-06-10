@@ -24,41 +24,52 @@ class LoginPage extends StatelessWidget {
 
   Widget buildBottom() {
     return Expanded(
-      child: Padding(
-        padding: EdgeInsets.only(top: 54.h, right: 36.w, left: 36.w),
-        child: Column(
-          children: [
-            LoginTextFormField(
-              iconData: Icons.check_circle_outline,
-              controller: controller.usernameController,
-              color: AppColors.iconCheckColor,
-              labelText: 'Email',
+      child: GetBuilder(
+        id: LoginController.PAGE_OBSERVE_ID,
+        init: controller,
+        builder: (context) {
+          return Padding(
+            padding: EdgeInsets.only(top: 54.h, right: 36.w, left: 36.w),
+            child: Column(
+              children: [
+                LoginTextFormField(
+                  iconData: Icons.check_circle_outline,
+                  controller: controller.usernameController,
+                  color: AppColors.iconCheckColor,
+                  labelText: 'Email',
+                  obscureText: false,
+                ),
+                SizedBox(height: 32.sp),
+                LoginTextFormField(
+                  iconData: Icons.remove_red_eye_outlined,
+                  controller: controller.passwordController,
+                  color: !controller.isObscure ? AppColors.iconCheckColor : AppColors.black.withOpacity(.15),
+                  labelText: 'Password',
+                  obscureText: controller.isObscure,
+                  onTap: () {
+                      controller.onTapPasswordIcon();
+                  },
+                ),
+                SizedBox(height: 24.sp),
+                LoginButton(
+                  onTap: () {
+                    controller.onTapLogin();
+                  },
+                ),
+                SizedBox(height: 43.h),
+                Text(
+                  "NEED HELP?",
+                  style: TextStyle(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.black.withOpacity(.65),
+                    fontFamily: "SFProDisplay"
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 32.sp),
-            LoginTextFormField(
-              iconData: Icons.remove_red_eye_outlined,
-              controller: controller.passwordController,
-              color: AppColors.black.withOpacity(.15),
-              labelText: 'Password',
-            ),
-            SizedBox(height: 24.sp),
-            LoginButton(
-              onTap: () {
-                controller.onTapLogin();
-              },
-            ),
-            SizedBox(height: 43.h),
-            Text(
-              "NEED HELP?",
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                color: AppColors.black.withOpacity(.65),
-                fontFamily: "SFProDisplay"
-              ),
-            ),
-          ],
-        ),
+          );
+        }
       ),
     );
   }
