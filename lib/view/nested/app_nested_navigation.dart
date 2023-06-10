@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:nano_health_suite/core/constants/navigation/app_navigation.dart';
 import 'package:nano_health_suite/view/screens/detail/binding/detail_binding.dart';
 import 'package:nano_health_suite/view/screens/detail/view/detail_page.dart';
-import 'package:nano_health_suite/view/screens/home/view/home_view.dart';
+import 'package:nano_health_suite/view/screens/home/view/home_page.dart';
 import 'package:nano_health_suite/view/screens/login/binding/login_binding.dart';
 import 'package:nano_health_suite/view/screens/login/view/login_page.dart';
 
@@ -30,7 +30,7 @@ class AppNestedNavigation extends StatelessWidget {
             AppNavigation.HOME: GetPageRoute(
               settings: settings,
               routeName: AppNavigation.HOME,
-              page: () => const HomePage(),
+              page: () => HomePage(),
               binding: HomeBinding(),
             ),
             AppNavigation.DETAIL: GetPageRoute(

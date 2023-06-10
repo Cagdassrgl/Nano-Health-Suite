@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
           children: [
             LoginTextFormField(
               iconData: Icons.check_circle_outline,
-              controller: controller.emailController,
+              controller: controller.usernameController,
               color: AppColors.iconCheckColor,
               labelText: 'Email',
             ),
@@ -44,7 +44,9 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 24.sp),
             LoginButton(
-              onTap: () {},
+              onTap: () {
+                controller.onTapLogin();
+              },
             ),
             SizedBox(height: 43.h),
             Text(
