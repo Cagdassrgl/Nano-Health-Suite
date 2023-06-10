@@ -43,6 +43,7 @@ class HomePage extends StatelessWidget {
             buildSuccessTop(),
             ListView.builder(
               shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: controller.products.length,
               itemBuilder: (context, index) {
                 final product = controller.products[index];
