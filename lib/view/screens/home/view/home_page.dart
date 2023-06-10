@@ -35,24 +35,38 @@ class HomePage extends StatelessWidget {
   }
 
   Widget buildSuccess() {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          buildSuccessTop(),
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: controller.products.length,
-            itemBuilder: (context, index) {
-              final product = controller.products[index];
-              return HomeProductCard(
-                model: product,
-                onTap: () {
-                  controller.navigateDetailPage(product);
-                },
-              );
-            },
-          ),
-        ],
+    return Container(
+      color: Colors.white,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            buildSuccessTop(),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: controller.products.length,
+              itemBuilder: (context, index) {
+                final product = controller.products[index];
+                return Column(
+                  children: [
+                    HomeProductCard(
+                      model: product,
+                      onTap: () {
+                        controller.navigateDetailPage(product);
+                      },
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 25.w),
+                      child: const Divider(
+                        thickness: 2,
+                      ),
+                    ),
+                    SizedBox(height: 10.h,)
+                  ],
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

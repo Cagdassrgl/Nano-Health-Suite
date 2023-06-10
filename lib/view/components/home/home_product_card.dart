@@ -26,10 +26,10 @@ class HomeProductCard extends StatelessWidget {
           width: 362.w,
           height: 309.h,
           decoration: BoxDecoration(
-            color: Colors.white,
             borderRadius: BorderRadius.circular(10.r),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
                 children: [
@@ -51,32 +51,62 @@ class HomeProductCard extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 10.h,
-                    right: 20.w,
-                    child: Row(
-                      children: [
-                        ColoredStar(size: 25, colorRatio: (model?.rating.rate ?? 0.0) >= 1 ? 1 : (model?.rating.rate ?? 0.0)),
-                        ColoredStar(size: 25, colorRatio: (model?.rating.rate ?? 0.0) >= 2 ? 1 : (model?.rating.rate ?? 0.0)- 1),
-                        ColoredStar(size: 25, colorRatio: (model?.rating.rate ?? 0.0) >= 3 ? 1: (model?.rating.rate ?? 0.0)- 2),
-                        ColoredStar(size: 25, colorRatio: (model?.rating.rate ?? 0.0) >= 4 ? 1: (model?.rating.rate ?? 0.0) - 3),
-                        ColoredStar(size: 25, colorRatio: (model?.rating.rate ?? 0.0) >= 5 ? 1: (model?.rating.rate ?? 0.0)- 4),
-                      ],
-                    )
-                  )
+                      bottom: 10.h,
+                      right: 20.w,
+                      child: Row(
+                        children: [
+                          ColoredStar(
+                              size: 25,
+                              colorRatio: (model?.rating.rate ?? 0.0) >= 1
+                                  ? 1
+                                  : (model?.rating.rate ?? 0.0)),
+                          ColoredStar(
+                              size: 25,
+                              colorRatio: (model?.rating.rate ?? 0.0) >= 2
+                                  ? 1
+                                  : (model?.rating.rate ?? 0.0) - 1),
+                          ColoredStar(
+                              size: 25,
+                              colorRatio: (model?.rating.rate ?? 0.0) >= 3
+                                  ? 1
+                                  : (model?.rating.rate ?? 0.0) - 2),
+                          ColoredStar(
+                              size: 25,
+                              colorRatio: (model?.rating.rate ?? 0.0) >= 4
+                                  ? 1
+                                  : (model?.rating.rate ?? 0.0) - 3),
+                          ColoredStar(
+                              size: 25,
+                              colorRatio: (model?.rating.rate ?? 0.0) >= 5
+                                  ? 1
+                                  : (model?.rating.rate ?? 0.0) - 4),
+                        ],
+                      ))
                 ],
               ),
               SizedBox(height: 15.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0.w),
-                child: Text(model?.title ?? ""),
+                child: Text(
+                  "product name",
+                  style: GoogleFonts.openSans(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w300,
+                    fontStyle: FontStyle.italic,
+                    color: Color(0xFF444B51),
+                  ),
+                ),
               ),
               SizedBox(height: 5.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0.w),
                 child: Text(
-                  model?.description ?? "",
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                  model?.title ?? "",
+                  style: GoogleFonts.openSans(
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.appbarColor,
+                  ),
                 ),
               ),
             ],
