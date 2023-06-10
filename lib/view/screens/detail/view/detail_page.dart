@@ -239,33 +239,35 @@ class DetailPage extends StatelessWidget {
                                   letterSpacing: 0.5,
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 25.0.w,
-                                  vertical: 5.h,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "${controller.product?.rating.rate ?? 0.0}",
-                                      style: GoogleFonts.openSans(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 32.sp,
-                                        color: AppColors.black,
-                                        letterSpacing: 0.5,
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 25.0.w,
+                                    vertical: 5.h,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "${controller.product?.rating.rate ?? 0.0}",
+                                        style: GoogleFonts.openSans(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 32.sp,
+                                          color: AppColors.black,
+                                          letterSpacing: 0.5,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(width: 50.w),
-                                    Row(
-                                      children: [
-                                        ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 1 ? 1 : (controller.product?.rating.rate ?? 0.0)),
-                                        ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 2 ? 1 : (controller.product?.rating.rate ?? 0.0)- 1),
-                                        ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 3 ? 1: (controller.product?.rating.rate ?? 0.0)- 2),
-                                        ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 4 ? 1: (controller.product?.rating.rate ?? 0.0) - 3),
-                                        ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 5 ? 1: (controller.product?.rating.rate ?? 0.0)- 4),
-                                      ],
-                                    )
-                                  ],
+                                      SizedBox(width: 50.w),
+                                      Row(
+                                        children: [
+                                          ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 1 ? 1 : (controller.product?.rating.rate ?? 0.0)),
+                                          ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 2 ? 1 : (controller.product?.rating.rate ?? 0.0)- 1),
+                                          ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 3 ? 1: (controller.product?.rating.rate ?? 0.0)- 2),
+                                          ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 4 ? 1: (controller.product?.rating.rate ?? 0.0) - 3),
+                                          ColoredStar(size: 25, colorRatio: (controller.product?.rating.rate ?? 0.0) >= 5 ? 1: (controller.product?.rating.rate ?? 0.0)- 4),
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               )
                             ],
